@@ -1,0 +1,42 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: demo-hzq
+  profiles:
+    #设置引用的环境配置work公司home家庭
+    active: work
+  #修改返回的json日期格式
+  jackson:
+    date-format: yyyy-mm-dd HH:mm:ss SSS
+    time-zone: GMT+8
+  main:
+    allow-bean-definition-overriding: true
+swagger:
+  enable: true
+mybatis:
+  type-aliases-package: com.hzq.demo.dao.entity
+  mapper-locations: classpath:mapper/*/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl     #打印sql到控制台
+
+#公司环境配置
+---
+spring:
+  profiles: work
+  datasource:
+    url: jdbc:mysql://localhost:3306/hzq_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root
+    password: Hzq1995!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+---
+#家庭配置
+spring:
+  profiles: home
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource

@@ -10,5 +10,140 @@
 
     <packaging>pom</packaging>
 
+    <modules>
+        <module>demo-commom</module>
+        <module>demo-model</module>
+        <module>demo-dao</module>
+        <module>demo-api</module>
+        <module>demo-service</module>
+        <module>demo-web</module>
+    </modules>
+
+    <properties>
+        <mysql.version>8.0.13</mysql.version>
+        <spring.version>2.1.2.RELEASE</spring.version>
+        <mybatis.spring.vesion>2.0.0</mybatis.spring.vesion>
+        <mybatis.generator.vesion>1.3.6</mybatis.generator.vesion>
+        <lombok.version>1.18.2</lombok.version>
+        <pagehelper.version>4.1.6</pagehelper.version>
+        <fastjson.version>1.2.58</fastjson.version>
+        <druid.version>1.1.10</druid.version>
+        <swagger.version>2.2.2</swagger.version>
+        <models.version>1.0-SNAPSHOT</models.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!--数据相关-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.vesion}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis.generator.vesion}</version>
+            </dependency>
+            <!--分页插件-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+            <!--生成get/set构造方法-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+
+            <!--springboot相关-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!-- swagger 相关-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+
+            <!--版本管理-->
+            <dependency>
+                <groupId>com.hzq</groupId>
+                <artifactId>demo-commom</artifactId>
+                <version>${models.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hzq</groupId>
+                <artifactId>demo-model</artifactId>
+                <version>${models.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hzq</groupId>
+                <artifactId>demo-dao</artifactId>
+                <version>${models.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hzq</groupId>
+                <artifactId>demo-api</artifactId>
+                <version>${models.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hzq</groupId>
+                <artifactId>demo-service</artifactId>
+                <version>${models.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hzq</groupId>
+                <artifactId>demo-web</artifactId>
+                <version>${models.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

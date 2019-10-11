@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzq.demo.dao.ext.UserExtMapper">
+
+    <select id="selectUserByMany" resultMap="com.hzq.demo.dao.auto.UserMapper.BaseResultMap">
+        select
+            <include refid="com.hzq.demo.dao.auto.UserMapper.Base_Column_List"/>
+        from
+            demo_user
+        where 1=1
+        <trim suffixOverrides=",">
+            <if test="username != null">
+                and username like '%${username,jdbcType=VARCHAR}%'
+            </if>
+            <if test="userType != null">
+                and user_type = #{userType,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                and phone = #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="isValid != null">
+                and is_valid = #{isValid,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </select>
+
+</mapper>
