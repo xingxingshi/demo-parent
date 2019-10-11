@@ -6,17 +6,16 @@ import com.hzq.demo.common.util.ConverUtils;
 import com.hzq.demo.control.user.req.UserPageQueryByManyReqVO;
 import com.hzq.demo.control.user.req.UserQueryByManyReqVO;
 import com.hzq.demo.control.user.resp.UserRespVO;
-import com.hzq.demo.service.impl.user.UserService;
-import com.hzq.demo.service.impl.user.req.UserPageQueryByManyReqDTO;
-import com.hzq.demo.service.impl.user.req.UserQueryByManyReqDTO;
-import com.hzq.demo.service.impl.user.resp.UserRespDTO;
+import com.hzq.demo.service.user.UserService;
+import com.hzq.demo.service.user.req.UserPageQueryByManyReqDTO;
+import com.hzq.demo.service.user.req.UserQueryByManyReqDTO;
+import com.hzq.demo.service.user.resp.UserRespDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -64,7 +63,7 @@ public class UserController {
 
 
 
-    public static void  nhj( Class<? extends Enum> secondStatusNodeEnumClass) throws Exception{
+   /* public static void  nhj( Class<? extends Enum> secondStatusNodeEnumClass) throws Exception{
 
 
         Enum[] SecondStatusEnumConstants = secondStatusNodeEnumClass.getEnumConstants();
@@ -88,6 +87,6 @@ public class UserController {
             //System.out.println("code=" + sequenceMethod.invoke(obj) + "; desc=" + getDesc.invoke(obj) + ";ParentStatusNodeEnumSequence="+byName.invoke(getParentStatusNodeEnum.invoke(obj)) +"  LeaseOrderStatusEnumName："+getLeaseOrderStatusEnum.invoke(obj).toString());
         }
 
-    }
+    }*/
 
 }

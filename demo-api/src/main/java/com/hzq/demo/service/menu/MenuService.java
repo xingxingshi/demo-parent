@@ -1,4 +1,4 @@
-package com.hzq.demo.service.impl.menu;
+package com.hzq.demo.service.menu;
 
 /**
  * @author HZQ

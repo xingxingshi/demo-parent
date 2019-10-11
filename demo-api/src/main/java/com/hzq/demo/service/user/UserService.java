@@ -1,9 +1,9 @@
-package com.hzq.demo.service.impl.user;
+package com.hzq.demo.service.user;
 
 import com.hzq.demo.common.core.PageResult;
-import com.hzq.demo.service.impl.user.req.UserPageQueryByManyReqDTO;
-import com.hzq.demo.service.impl.user.req.UserQueryByManyReqDTO;
-import com.hzq.demo.service.impl.user.resp.UserRespDTO;
+import com.hzq.demo.service.user.req.UserPageQueryByManyReqDTO;
+import com.hzq.demo.service.user.req.UserQueryByManyReqDTO;
+import com.hzq.demo.service.user.resp.UserRespDTO;
 
 import java.util.List;
 

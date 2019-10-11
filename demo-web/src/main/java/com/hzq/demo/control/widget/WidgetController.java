@@ -1,6 +1,6 @@
 package com.hzq.demo.control.widget;
 
-import com.hzq.demo.service.impl.widget.WidgetService;
+import com.hzq.demo.service.widget.WidgetService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.hzq.demo.service.impl.role;
+package com.hzq.demo.service.widget;
 
 /**
  * @author HZQ
@@ -6,5 +6,5 @@ package com.hzq.demo.service.impl.role;
  * @Date: 2019-06-04
  * @Time: 09:24
  */
-public interface RoleService {
+public interface WidgetService {
 }

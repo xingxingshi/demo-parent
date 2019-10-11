@@ -1,6 +1,5 @@
-package com.hzq.demo.service.impl.user.req;
+package com.hzq.demo.service.user.req;
 
-import com.hzq.demo.common.core.PageReqBase;
 import lombok.Data;
 
 /**
@@ -10,7 +9,7 @@ import lombok.Data;
  * @Time: 16:45
  */
 @Data
-public class UserPageQueryByManyReqDTO extends PageReqBase {
+public class UserQueryByManyReqDTO {
 
     /**
      * 用户名
