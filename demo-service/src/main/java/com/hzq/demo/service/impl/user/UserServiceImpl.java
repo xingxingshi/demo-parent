@@ -1,4 +1,4 @@
-package com.hzq.demo.service.user.impl;
+package com.hzq.demo.service.impl.user;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -7,10 +7,10 @@ import com.hzq.demo.common.util.ConverUtils;
 import com.hzq.demo.dao.ext.UserExtMapper;
 import com.hzq.demo.model.auto.User;
 import com.hzq.demo.model.ext.user.req.UserQueryByManyReqExt;
-import com.hzq.demo.service.user.UserService;
-import com.hzq.demo.service.user.req.UserPageQueryByManyReqDTO;
-import com.hzq.demo.service.user.req.UserQueryByManyReqDTO;
-import com.hzq.demo.service.user.resp.UserRespDTO;
+import com.hzq.demo.service.impl.user.UserService;
+import com.hzq.demo.service.impl.user.req.UserPageQueryByManyReqDTO;
+import com.hzq.demo.service.impl.user.req.UserQueryByManyReqDTO;
+import com.hzq.demo.service.impl.user.resp.UserRespDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

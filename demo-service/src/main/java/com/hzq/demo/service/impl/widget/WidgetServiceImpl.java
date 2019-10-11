@@ -1,7 +1,6 @@
-package com.hzq.demo.service.widget.impl;
+package com.hzq.demo.service.impl.widget;
 
 import com.hzq.demo.dao.ext.WidgetExtMapper;
-import com.hzq.demo.service.widget.WidgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

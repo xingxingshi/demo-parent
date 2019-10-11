@@ -3,7 +3,7 @@ package com.hzq.demo.control.role;
 import com.hzq.demo.common.core.PageResult;
 import com.hzq.demo.common.core.Result;
 import com.hzq.demo.control.role.resp.RoleRespVO;
-import com.hzq.demo.service.role.RoleService;
+import com.hzq.demo.service.impl.role.RoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

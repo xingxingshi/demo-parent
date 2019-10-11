@@ -1,7 +1,7 @@
-package com.hzq.demo.service.menu.impl;
+package com.hzq.demo.service.impl.menu;
 
 import com.hzq.demo.dao.ext.MenuExtMapper;
-import com.hzq.demo.service.menu.MenuService;
+import com.hzq.demo.service.impl.menu.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

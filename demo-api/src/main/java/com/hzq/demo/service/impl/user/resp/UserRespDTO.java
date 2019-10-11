@@ -1,4 +1,4 @@
-package com.hzq.demo.service.user.resp;
+package com.hzq.demo.service.impl.user.resp;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.hzq.demo.service.role.resp;
+package com.hzq.demo.service.impl.role.resp;
 
 import lombok.Data;
 

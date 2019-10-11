@@ -1,9 +1,8 @@
-package com.hzq.demo.service.role.impl;
+package com.hzq.demo.service.impl.role;
 
 import com.hzq.demo.dao.ext.RoleExtMapper;
 import com.hzq.demo.dao.ext.RoleRelMenuExtMapper;
 import com.hzq.demo.dao.ext.RoleRelWidgetExtMapper;
-import com.hzq.demo.service.role.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
