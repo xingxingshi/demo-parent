@@ -54,7 +54,7 @@ public class SysLogAspect {
             sysLog.setCreateDate(new Date());
             sysLog.setParams(JSON.toJSONString(point.getArgs()));
             sysLog.setResponse(JSON.toJSONString(result));
-
+            sysLogMapper.insert(sysLog);
         } catch (Exception e) {
         }
         return result;
