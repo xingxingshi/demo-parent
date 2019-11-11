@@ -1,6 +1,8 @@
 package com.hzq.demo.control.menu;
 
+import com.hzq.demo.service.menu.MenuService;
 import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/menu")
 public class MenuController {
 
-    /*@Autowired
-    private MenuService menuService;*/
+    @Autowired
+    private MenuService menuService;
 }
