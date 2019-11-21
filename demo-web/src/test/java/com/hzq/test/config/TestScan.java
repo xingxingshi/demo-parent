@@ -2,6 +2,8 @@ package com.hzq.test.config;
 
 import com.alibaba.fastjson.JSON;
 import com.hzq.demo.common.core.PageReqBase;
+import com.hzq.demo.control.role.req.RolePageQueryByManyReqVO;
+import com.hzq.demo.control.user.UserController;
 import com.hzq.test.BaseTest;
 import org.junit.Test;
 import org.reflections.Reflections;
@@ -9,6 +11,7 @@ import org.reflections.scanners.FieldAnnotationsScanner;
 import org.reflections.scanners.MethodAnnotationsScanner;
 import org.reflections.scanners.ResourcesScanner;
 import org.reflections.scanners.SubTypesScanner;
+import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -93,5 +98,27 @@ public class TestScan extends BaseTest {
             });*/
 
         });
+    }
+
+
+    @Test
+    public void testClasspathHelper(){
+        URL url = ClasspathHelper.forClass(UserController.class);
+        System.out.println(JSON.toJSONString(url));
+        System.out.println(url.getProtocol());
+    }
+
+    @Test
+    public void testAnotation(){
+
+        PageReqBase page=new RolePageQueryByManyReqVO();
+
+        Annotation[] annotations = PageReqBase.class.getAnnotations();
+        System.out.println(page.getClass().getName());
+        for (Annotation annotation : annotations) {
+            System.out.println(annotation.annotationType().getName());
+        }
+
+
     }
 }
