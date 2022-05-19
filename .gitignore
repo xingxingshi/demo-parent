@@ -1,0 +1,49 @@
+# idea
+*.iml
+*.ipr
+*.iws
+/.idea
+/.run
+
+# maven
+target
+
+# node modules
+node_modules
+.project
+.settings
+.classpath
+APP_HOME_IS_UNDEFINED
+catalina.base_IS_UNDEFINED
+version.vm
+version.vm
+
+**.DS_Store
+#PMD
+pmd-report
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
