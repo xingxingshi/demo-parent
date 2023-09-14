@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf ../demo-web/src/main/resources/static && react-scripts build",
+    "build": "rm -rf ../demo-web/src/main/resources/public && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
