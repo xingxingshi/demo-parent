@@ -111,7 +111,7 @@ public class LRUCache {
     public int findKthLargest(int[] nums, int k) {
 
         for (int i = 0; i < k; i++) {
-            for (j=0;j<nums.length-1;j--){
+            for (int j=0;j<nums.length-1;j--){
                 if(nums[j]>nums[j+1]){
                     int temp=nums[j];
                     nums[j]=nums[j+1];
@@ -119,7 +119,7 @@ public class LRUCache {
                 }
             }
         }
-        return nums[nums.length-k]
+        return nums[nums.length-k];
     }
 
 }

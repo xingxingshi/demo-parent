@@ -1,6 +1,7 @@
 package com.hzq.demo.leetcode;
 
 import java.util.Objects;
+import java.util.Stack;
 
 /**
  * @author HZQ
@@ -11,10 +12,31 @@ import java.util.Objects;
 public class TestListNode {
 
 
-    public static void main(String[] args) {
 
 
+
+    public static int getDepth(String str) {
+        Stack<Character> stack = new Stack<>();
+        int depth = 0;
+        for (char c : str.toCharArray()) {
+            if (c == '(') {
+                stack.push(c);
+                depth = Math.max(depth, stack.size());
+            } else if (c == ')') {
+                if (stack.isEmpty() || stack.pop() != '(') {
+                    return -1;
+                }
+            }
+        }
+        return stack.isEmpty() ? depth : -1;
     }
+
+    public static void main(String[] args) {
+        System.out.println(getDepth("()")); // 1
+        System.out.println(getDepth("(()(()))")); // 3
+        System.out.println(getDepth("())()")); // -1
+    }
+
 
     public ListNode reverseKGroup(ListNode head, int k) {
 
@@ -32,16 +54,16 @@ public class TestListNode {
                 pre= current;
                 current=next;
             }
-            if(result=null){
+            if(result == null){
                 result=pre;
-                resultTail=head
+                resultTail=head;
             }else {
                 resultTail.next=pre;
             }
             pre=null;
 
         }
-
+        return null;
     }
 
 

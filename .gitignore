@@ -8,6 +8,7 @@
 # maven
 target
 
+/static
 # node modules
 node_modules
 .project
