@@ -4,11 +4,14 @@ import com.hzq.test.interfaces.Bird;
 import com.hzq.test.utils.MatchUtils;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.ToLongFunction;
+import java.util.stream.Collectors;
 
 /**
  * @author HZQ
@@ -92,6 +95,17 @@ public class TestFunction {
         boolean test = MatchUtils.matchType.test(1);
         System.out.println(test);
 
+    }
+
+    @Test
+    public void testStream(){
+        List<String> strings = new ArrayList<>();
+        strings.add("aaa");
+        strings.add("bbb");
+        strings.add("ccc");
+        strings.add("ddd");
+        String collect = strings.stream().collect(Collectors.joining(";"));
+        System.out.println(collect);
     }
 
 

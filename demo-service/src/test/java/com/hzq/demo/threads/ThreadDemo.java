@@ -18,6 +18,14 @@ public class ThreadDemo {
 
     }
 
+    public static class MyThreadOne implements Runnable{
+
+        @Override
+        public void run() {
+            System.out.println("MyThreadOne--------run--"+Thread.currentThread().getId());
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -29,6 +37,10 @@ public class ThreadDemo {
         myThread.run();
         myThread.run();
         myThread.start();
+
+        MyThreadOne myThreadOne = new MyThreadOne();
+        Thread one = new Thread(myThreadOne);
+        one.start();
 
         new Thread(()->{
             System.out.println("ddddddd--"+Thread.currentThread().getId());

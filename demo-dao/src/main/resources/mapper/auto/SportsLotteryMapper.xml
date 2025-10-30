@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzq.demo.dao.auto.SportsLotteryMapper">
+  <resultMap id="BaseResultMap" type="com.hzq.demo.model.auto.SportsLottery">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="term" jdbcType="INTEGER" property="term" />
+    <result column="front_one" jdbcType="INTEGER" property="frontOne" />
+    <result column="front_two" jdbcType="INTEGER" property="frontTwo" />
+    <result column="front_three" jdbcType="INTEGER" property="frontThree" />
+    <result column="front_four" jdbcType="INTEGER" property="frontFour" />
+    <result column="front_five" jdbcType="INTEGER" property="frontFive" />
+    <result column="back_one" jdbcType="INTEGER" property="backOne" />
+    <result column="back_two" jdbcType="INTEGER" property="backTwo" />
+    <result column="result_code" jdbcType="VARCHAR" property="resultCode" />
+    <result column="open_time" jdbcType="TIMESTAMP" property="openTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, term, front_one, front_two, front_three, front_four, front_five, back_one, back_two, 
+    result_code, open_time, create_time, modify_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from demo_sports_lottery
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from demo_sports_lottery
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hzq.demo.model.auto.SportsLottery">
+    insert into demo_sports_lottery (id, term, front_one,
+      front_two, front_three, front_four, 
+      front_five, back_one, back_two, 
+      result_code, open_time, create_time, 
+      modify_time)
+    values (#{id,jdbcType=INTEGER}, #{term,jdbcType=INTEGER}, #{frontOne,jdbcType=INTEGER}, 
+      #{frontTwo,jdbcType=INTEGER}, #{frontThree,jdbcType=INTEGER}, #{frontFour,jdbcType=INTEGER}, 
+      #{frontFive,jdbcType=INTEGER}, #{backOne,jdbcType=INTEGER}, #{backTwo,jdbcType=INTEGER}, 
+      #{resultCode,jdbcType=VARCHAR}, #{openTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hzq.demo.model.auto.SportsLottery">
+    insert into demo_sports_lottery
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="term != null">
+        term,
+      </if>
+      <if test="frontOne != null">
+        front_one,
+      </if>
+      <if test="frontTwo != null">
+        front_two,
+      </if>
+      <if test="frontThree != null">
+        front_three,
+      </if>
+      <if test="frontFour != null">
+        front_four,
+      </if>
+      <if test="frontFive != null">
+        front_five,
+      </if>
+      <if test="backOne != null">
+        back_one,
+      </if>
+      <if test="backTwo != null">
+        back_two,
+      </if>
+      <if test="resultCode != null">
+        result_code,
+      </if>
+      <if test="openTime != null">
+        open_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="term != null">
+        #{term,jdbcType=INTEGER},
+      </if>
+      <if test="frontOne != null">
+        #{frontOne,jdbcType=INTEGER},
+      </if>
+      <if test="frontTwo != null">
+        #{frontTwo,jdbcType=INTEGER},
+      </if>
+      <if test="frontThree != null">
+        #{frontThree,jdbcType=INTEGER},
+      </if>
+      <if test="frontFour != null">
+        #{frontFour,jdbcType=INTEGER},
+      </if>
+      <if test="frontFive != null">
+        #{frontFive,jdbcType=INTEGER},
+      </if>
+      <if test="backOne != null">
+        #{backOne,jdbcType=INTEGER},
+      </if>
+      <if test="backTwo != null">
+        #{backTwo,jdbcType=INTEGER},
+      </if>
+      <if test="resultCode != null">
+        #{resultCode,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null">
+        #{openTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hzq.demo.model.auto.SportsLottery">
+    update demo_sports_lottery
+    <set>
+      <if test="term != null">
+        term = #{term,jdbcType=INTEGER},
+      </if>
+      <if test="frontOne != null">
+        front_one = #{frontOne,jdbcType=INTEGER},
+      </if>
+      <if test="frontTwo != null">
+        front_two = #{frontTwo,jdbcType=INTEGER},
+      </if>
+      <if test="frontThree != null">
+        front_three = #{frontThree,jdbcType=INTEGER},
+      </if>
+      <if test="frontFour != null">
+        front_four = #{frontFour,jdbcType=INTEGER},
+      </if>
+      <if test="frontFive != null">
+        front_five = #{frontFive,jdbcType=INTEGER},
+      </if>
+      <if test="backOne != null">
+        back_one = #{backOne,jdbcType=INTEGER},
+      </if>
+      <if test="backTwo != null">
+        back_two = #{backTwo,jdbcType=INTEGER},
+      </if>
+      <if test="resultCode != null">
+        result_code = #{resultCode,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null">
+        open_time = #{openTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hzq.demo.model.auto.SportsLottery">
+    update demo_sports_lottery
+    set term = #{term,jdbcType=INTEGER},
+      front_one = #{frontOne,jdbcType=INTEGER},
+      front_two = #{frontTwo,jdbcType=INTEGER},
+      front_three = #{frontThree,jdbcType=INTEGER},
+      front_four = #{frontFour,jdbcType=INTEGER},
+      front_five = #{frontFive,jdbcType=INTEGER},
+      back_one = #{backOne,jdbcType=INTEGER},
+      back_two = #{backTwo,jdbcType=INTEGER},
+      result_code = #{resultCode,jdbcType=VARCHAR},
+      open_time = #{openTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByTerm" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from demo_sports_lottery
+    where term = #{term}
+  </select>
+
+  <select id="selectTermBefore" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from demo_sports_lottery
+    where term &lt; #{term}
+    order by id desc
+    limit #{count}
+  </select>
+
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from demo_sports_lottery
+  </select>
+</mapper>
