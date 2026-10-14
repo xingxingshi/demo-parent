@@ -204,7 +204,8 @@ public class SportsLotteryUtil {
         Random random = new Random();
         while (tempSet.size() < count ){
             Thread.sleep(100);
-            tempSet.add(random.nextInt(integers.size()));
+            int index = random.nextInt(integers.size());
+            tempSet.add(integers.get(index));
         }
         return new ArrayList<>(tempSet);
     }
@@ -229,7 +230,7 @@ public class SportsLotteryUtil {
     }
 
     public static void main(String[] args) throws  Exception{
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
             randomSportLottery();
         }
     }

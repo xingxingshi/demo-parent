@@ -12,18 +12,16 @@ import com.hzq.demo.service.impl.sportsLottery.util.SportsLotteryStrategy;
 import com.hzq.demo.service.impl.sportsLottery.util.SportsLotteryUtil;
 import com.hzq.demo.service.sportsLottery.SportsLotteryService;
 import com.hzq.demo.util.CollectionUtil;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.*;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CountDownLatch;
 import java.util.stream.Collectors;
 
 /**
@@ -34,13 +32,20 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Service
-public class SportsLotteryServiceImpl implements SportsLotteryService {
+public class SportsLotteryServiceImpl implements SportsLotteryService, BeanFactoryPostProcessor, BeanPostProcessor {
 
     @Autowired
     private RollToolsApiAdapter rollToolsApiAdapter;
 
     @Autowired
     private SportsLotteryMapper sportsLotteryMapper;
+
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
+        System.out.println("init  SportsLotteryServiceImpl");
+    }
+
+
 
     @Override
     public SportsLotteryDTO findTerm(Integer term) {
